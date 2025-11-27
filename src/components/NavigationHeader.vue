@@ -11,6 +11,7 @@
         <div class="nav-links" :class="{ active: menuOpen }">
           <a href="#hero" class="nav-link" @click="closeMenu">Inicio</a>
           <a href="#projects" class="nav-link" @click="closeMenu">Proyectos</a>
+          <a href="#education" class="nav-link" @click="closeMenu">Educación</a>
           <a href="#footer" class="nav-link" @click="closeMenu">Contacto</a>
         </div>
 
