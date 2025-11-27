@@ -14,6 +14,7 @@
           <ul class="link-list">
             <li><a href="#hero">Inicio</a></li>
             <li><a href="#projects">Proyectos</a></li>
+            <li><a href="#education">Educación</a></li>
             <li><a href="https://www.linkedin.com/in/francisco-hurtado-p-0b9602301/" target="_blank">LinkedIn</a></li>
             <li><a href="https://github.com/franmanic" target="_blank">GitHub</a></li>
           </ul>
