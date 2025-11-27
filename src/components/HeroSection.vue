@@ -92,7 +92,14 @@
               <path d="M10 3.75V16.25M10 16.25L15.625 10.625M10 16.25L4.375 10.625" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
+          <a href="#education" class="btn" style="margin-left: 1rem;">
+            Ver Educación
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 3.75V16.25M10 16.25L15.625 10.625M10 16.25L4.375 10.625" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
         </div>
+        
       </div>
     </div>
   </section>

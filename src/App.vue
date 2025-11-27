@@ -3,6 +3,7 @@ import NavigationHeader from './components/NavigationHeader.vue'
 import ParticleBackground from './components/ParticleBackground.vue'
 import HeroSection from './components/HeroSection.vue'
 import ProjectCarousel from './components/ProjectCarousel.vue'
+import EducationSection from './components/EducationSection.vue'
 import FooterSection from './components/FooterSection.vue'
 import ScrollToTop from './components/ScrollToTop.vue'
 </script>
@@ -25,6 +26,11 @@ import ScrollToTop from './components/ScrollToTop.vue'
       <!-- Projects Section -->
       <section id="projects">
         <ProjectCarousel />
+      </section>
+      
+      <!-- Education Section -->
+      <section id="education">
+        <EducationSection />
       </section>
       
       <!-- Footer -->

@@ -5,7 +5,7 @@
         <!-- Brand -->
         <div class="footer-brand">
           <h3 class="brand-name">Francisco Hurtado</h3>
-          <p class="brand-tagline">Full Stack Developer & Software Engineer</p>
+          <p class="brand-tagline">Frontend Developer & Software Engineer</p>
         </div>
 
         <!-- Quick Links -->
