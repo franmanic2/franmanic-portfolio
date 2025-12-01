@@ -119,7 +119,15 @@ const projects = ref([
     contribution: 'Desarrollo del frontend con Vue.js',
     image: 'https://i.postimg.cc/BvsRqfZQ/Captura-de-pantalla-2025-11-27-010805.png',
     github: 'https://github.com/FleemoPartners/fleemo-webapp',
-    tags: ['Vue.js']
+    tags: ['Vue.js', 'HTML', 'CSS', 'JavaScript']
+  },
+  {
+    title: 'Text Eraser Web Application',
+    description: 'Web para borrado de textos especificos dentro de textos grandes',
+    contribution: 'Desarrollo del frontend con Vue.js',
+    image: 'https://i.postimg.cc/6pHdTXmn/Captura-de-pantalla-2025-11-30-220846.png',
+    github: 'http://github.com/franmanic2/text-eraser-web',
+    tags: ['Vue.js', 'HTML', 'CSS', 'JavaScript']
   },
   {
     title: 'Elixir-Line Web Application',
