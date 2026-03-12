@@ -3,10 +3,10 @@
     <div class="container">
       <div class="section-header fade-in">
         <h2 class="section-title">
-          <span class="text-gradient">Experiencia & Educación</span>
+          <span class="text-gradient">{{ $t('experience.title') }}</span>
         </h2>
         <p class="section-description">
-          Mi trayectoria profesional y académica
+          {{ $t('experience.subtitle') }}
         </p>
       </div>
 
@@ -17,7 +17,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M20 7h-4V5l-2-2h-4L8 5v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zM10 5h4v2h-4V5zm10 15H4V9h16v11z" fill="currentColor"/>
             </svg>
-            Experiencia Laboral
+            {{ $t('experience.workTitle') }}
           </h3>
           <div class="timeline">
             <div 
@@ -42,7 +42,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" fill="currentColor"/>
             </svg>
-            Educación
+            {{ $t('experience.educationTitle') }}
           </h3>
           <div class="timeline">
             <div 
@@ -67,7 +67,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm6 9.09c0 4-2.55 7.7-6 8.83-3.45-1.13-6-4.82-6-8.83V6.31l6-2.12 6 2.12v4.78z" fill="currentColor"/>
             </svg>
-            Certificaciones
+            {{ $t('experience.certTitle') }}
           </h3>
           <div class="certifications-list">
             <a 
@@ -94,43 +94,46 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 // Experiencia Laboral
-const workExperience = ref([
+const workExperience = computed(() => [
   {
     position: 'Co-Founder',
     company: 'Fleemo Partners',
     period: '2025 - Presente',
-    description: 'Asesoramiento en estrategias de crecimiento en redes sociales y desarrollo de paginas web'
+    description: t('experience.work.fleemo.desc')
   },
   {
     position: 'Soporte de Software',
     company: 'Minera Enproyec',
     period: 'Mayo 2025 - Agosto 2025',
-    description: 'Practicante de soporte y desarrollo de software'
+    description: t('experience.work.enproyec.desc')
   },
   {
     position: 'Founder',
     company: 'Frantech',
     period: '2022 - 2023',
-    description: 'Mantenimiento de Hardware para PC y Laptops de manera independiente'
+    description: t('experience.work.frantech.desc')
   }
 ])
 
 // Educación
-const education = ref([
+const education = computed(() => [
   {
     degree: 'Ingeniería de Software',
     institution: 'Universidad Peruana de Ciencias Aplicadas',
     period: '2021 - Presente',
-    description: 'Especialización en desarrollo web y arquitectura de software'
+    description: t('experience.edu.upc.desc')
   },
   {
     degree: 'English Grade - WeTalk UPC',
     institution: 'Universidad Peruana de Ciencias Aplicadas',
     period: '2024',
-    description: 'Certificación en inglés en plataforma de Cambridge'
+    description: t('experience.edu.english.desc')
   }
 ])
 

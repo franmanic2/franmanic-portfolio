@@ -14,13 +14,12 @@
           <span class="text-gradient">Francisco Hurtado</span>
         </h1>
         
-        <p class="hero-subtitle">Frontend Developer & Software Engineer</p>
+        <p class="hero-subtitle">{{ $t('hero.subtitle') }}</p>
         
         <!-- Bio -->
         <div class="hero-bio">
           <p>
-            Desarrollador Frontend apasionado por crear soluciones tecnológicas innovadoras.
-            Especializado en desarrollo web moderno, arquitectura de software y diseño de sistemas escalables.
+            {{ $t('hero.bio') }}
           </p>
         </div>
 
@@ -98,13 +97,13 @@
         <!-- CTA -->
         <div class="hero-cta">
           <a href="#projects" class="btn">
-            Ver Proyectos
+            {{ $t('hero.viewProjects') }}
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M10 3.75V16.25M10 16.25L15.625 10.625M10 16.25L4.375 10.625" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-          <a href="#education" class="btn" style="margin-left: 1rem;">
-            Ver Educación
+          <a href="#education" class="btn">
+            {{ $t('hero.viewEducation') }}
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M10 3.75V16.25M10 16.25L15.625 10.625M10 16.25L4.375 10.625" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
@@ -262,6 +261,10 @@
 /* CTA */
 .hero-cta {
   margin-top: var(--spacing-xl);
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
 }
 
 /* Responsive */

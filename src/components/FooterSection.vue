@@ -5,16 +5,16 @@
         <!-- Brand -->
         <div class="footer-brand">
           <h3 class="brand-name">Francisco Hurtado</h3>
-          <p class="brand-tagline">Frontend Developer & Software Engineer</p>
+          <p class="brand-tagline">{{ $t('footer.tagline') }}</p>
         </div>
 
         <!-- Quick Links -->
         <div class="footer-links">
-          <h4 class="footer-heading">Enlaces</h4>
+          <h4 class="footer-heading">{{ $t('footer.links') }}</h4>
           <ul class="link-list">
-            <li><a href="#hero">Inicio</a></li>
-            <li><a href="#projects">Proyectos</a></li>
-            <li><a href="#education">Educación</a></li>
+            <li><a href="#hero">{{ $t('nav.home') }}</a></li>
+            <li><a href="#projects">{{ $t('nav.projects') }}</a></li>
+            <li><a href="#education">{{ $t('nav.education') }}</a></li>
             <li><a href="https://www.linkedin.com/in/francisco-hurtado-p-0b9602301/" target="_blank">LinkedIn</a></li>
             <li><a href="https://github.com/franmanic" target="_blank">GitHub</a></li>
           </ul>
@@ -22,7 +22,7 @@
 
         <!-- Contact -->
         <div class="footer-contact">
-          <h4 class="footer-heading">Contacto</h4>
+          <h4 class="footer-heading">{{ $t('footer.contact') }}</h4>
           <ul class="contact-list">
             <li>
               <a href="mailto:frhurtado10@gmail.com">
@@ -39,7 +39,7 @@
 
         <!-- Social -->
         <div class="footer-social">
-          <h4 class="footer-heading">Sígueme</h4>
+          <h4 class="footer-heading">{{ $t('footer.followMe') }}</h4>
           <div class="social-icons">
             <a 
               href="https://www.linkedin.com/in/francisco-hurtado-p-0b9602301/" 
@@ -95,12 +95,12 @@
       <!-- Copyright -->
       <div class="footer-bottom">
         <p class="copyright">
-          © {{ currentYear }} Francisco Hurtado. Todos los derechos reservados.
+          © {{ currentYear }} Francisco Hurtado. {{ $t('footer.rights') }}
         </p>
         <p class="made-with">
-          Hecho con 
+          {{ $t('footer.madeWith') }} 
           <span class="heart">♥</span> 
-          usando Vue.js
+          {{ $t('footer.using') }}
         </p>
       </div>
     </div>

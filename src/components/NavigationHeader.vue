@@ -9,12 +9,18 @@
 
         <!-- Navigation Links -->
         <div class="nav-links" :class="{ active: menuOpen }">
-          <a href="#hero" class="nav-link" @click="closeMenu">Inicio</a>
-          <a href="#projects" class="nav-link" @click="closeMenu">Proyectos</a>
-          <a href="#education" class="nav-link" @click="closeMenu">Educación</a>
-          <a href="#footer" class="nav-link" @click="closeMenu">Contacto</a>
+          <a href="#hero" class="nav-link" @click="closeMenu">{{ $t('nav.home') }}</a>
+          <a href="#projects" class="nav-link" @click="closeMenu">{{ $t('nav.projects') }}</a>
+          <a href="#education" class="nav-link" @click="closeMenu">{{ $t('nav.education') }}</a>
+          <a href="#footer" class="nav-link" @click="closeMenu">{{ $t('nav.contact') }}</a>
+          
+          <select v-model="locale" class="lang-select" aria-label="Select language">
+            <option value="es">🇪🇸 ES</option>
+            <option value="en">🇺🇸 EN</option>
+          </select>
+
           <a href="/CV.pdf" download="CV_Francisco_Hurtado.pdf" class="btn" @click="closeMenu">
-            Descargar CV
+            {{ $t('nav.downloadCV') }}
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-download">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
@@ -42,7 +48,9 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 
+const { locale } = useI18n()
 const isScrolled = ref(false)
 const menuOpen = ref(false)
 
@@ -149,6 +157,30 @@ onUnmounted(() => {
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+/* Language Select */
+.lang-select {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  outline: none;
+}
+
+.lang-select:hover, .lang-select:focus {
+  border-color: var(--color-accent);
+}
+
+.lang-select option {
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  font-weight: 600;
 }
 
 /* Mobile Menu Toggle */
