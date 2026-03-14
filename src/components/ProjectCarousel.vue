@@ -195,14 +195,54 @@ const isVisible = (index) => {
 
 <style scoped>
 .projects-section {
-  padding: var(--spacing-3xl) 0;
+  padding: var(--spacing-xl) 0;
   position: relative;
+  background-color: var(--color-bg-primary);
+  overflow: hidden;
+}
+
+/* Tech Grid Pattern */
+.projects-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+  background-size: 35px 35px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Edge Fades for Seamless Black Integration */
+.projects-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom, 
+    var(--color-bg-primary) 0%, 
+    transparent 15%, 
+    transparent 85%, 
+    var(--color-bg-primary) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
 }
 
 /* Section Header */
 .section-header {
   text-align: center;
-  margin-bottom: var(--spacing-3xl);
+  margin-bottom: var(--spacing-xl);
 }
 
 .section-title {
@@ -222,7 +262,7 @@ const isVisible = (index) => {
   position: relative;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 var(--spacing-3xl);
+  padding: 0 var(--spacing-xl);
 }
 
 /* 3D Carousel */
@@ -237,12 +277,12 @@ const isVisible = (index) => {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 600px;
+  min-height: 480px;
 }
 
 .carousel-slide {
   position: absolute;
-  width: 550px;
+  width: 450px;
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   pointer-events: none;
@@ -338,7 +378,7 @@ const isVisible = (index) => {
 .project-image {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 200px;
   overflow: hidden;
   background: var(--color-bg-secondary);
 }
@@ -380,25 +420,25 @@ const isVisible = (index) => {
 
 /* Project Info */
 .project-info {
-  padding: var(--spacing-xl);
+  padding: var(--spacing-md) var(--spacing-lg);
 }
 
 .project-title {
-  font-size: var(--font-size-2xl);
-  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-xs);
   color: var(--color-text-primary);
 }
 
 .project-description {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
-  margin-bottom: var(--spacing-md);
-  line-height: 1.6;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.5;
 }
 
 .project-contribution {
   background: var(--color-bg-secondary);
-  padding: var(--spacing-md);
+  padding: var(--spacing-sm);
   border-radius: var(--radius-md);
   margin-bottom: var(--spacing-md);
   border-left: 3px solid var(--color-accent);

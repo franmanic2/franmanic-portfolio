@@ -125,7 +125,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-3xl) 0;
+  padding: calc(var(--spacing-3xl) + 4rem) 0 var(--spacing-3xl);
   position: relative;
 }
 

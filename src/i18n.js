@@ -69,6 +69,10 @@ const messages = {
         }
       }
     },
+    stack: {
+      title: 'Mis Skills & Herramientas',
+      subtitle: 'El arsenal tecnológico que utilizo para transformar ideas en experiencias digitales rápidas, seguras y escalables.'
+    },
     footer: {
       tagline: 'Frontend Developer & Software Engineer',
       links: 'Enlaces',
@@ -146,6 +150,10 @@ const messages = {
           desc: 'English certification on Cambridge platform'
         }
       }
+    },
+    stack: {
+      title: 'My Skills & Tools',
+      subtitle: 'The carefully selected technological arsenal I use to turn ideas into robust, secure, and highly scalable digital experiences.'
     },
     footer: {
       tagline: 'Frontend Developer & Software Engineer',

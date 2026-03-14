@@ -161,6 +161,31 @@ const certifications = ref([
 .education-section {
   padding: var(--spacing-3xl) 0;
   position: relative;
+  background-color: var(--color-bg-secondary);
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--color-bg-secondary),
+    var(--color-bg-secondary) 10px,
+    rgba(255, 255, 255, 0.015) 10px,
+    rgba(255, 255, 255, 0.015) 11px
+  );
+}
+
+.education-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, var(--color-bg-primary) 0%, transparent 15%, transparent 85%, var(--color-bg-primary) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
 }
 
 /* Section Header */

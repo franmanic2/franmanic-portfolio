@@ -6,6 +6,7 @@ import ProjectCarousel from './components/ProjectCarousel.vue'
 import EducationSection from './components/EducationSection.vue'
 import FooterSection from './components/FooterSection.vue'
 import ScrollToTop from './components/ScrollToTop.vue'
+import StackSection from './components/StackSection.vue'
 </script>
 
 <template>
@@ -21,6 +22,11 @@ import ScrollToTop from './components/ScrollToTop.vue'
       <!-- Hero Section -->
       <section id="hero">
         <HeroSection />
+      </section>
+
+      <!-- Stack Section -->
+      <section id="stack">
+        <StackSection />
       </section>
       
       <!-- Projects Section -->

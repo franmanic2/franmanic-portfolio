@@ -14,10 +14,14 @@
           <a href="#education" class="nav-link" @click="closeMenu">{{ $t('nav.education') }}</a>
           <a href="#footer" class="nav-link" @click="closeMenu">{{ $t('nav.contact') }}</a>
           
-          <select v-model="locale" class="lang-select" aria-label="Select language">
-            <option value="es">🇪🇸 ES</option>
-            <option value="en">🇺🇸 EN</option>
-          </select>
+          <button class="btn lang-btn" @click="toggleLanguage" aria-label="Toggle language">
+            <template v-if="locale === 'es'">
+              <img src="https://flagcdn.com/w20/es.png" alt="ES" class="flag-icon" /> ES
+            </template>
+            <template v-else>
+              <img src="https://flagcdn.com/w20/us.png" alt="US" class="flag-icon" /> EN
+            </template>
+          </button>
 
           <a href="/CV.pdf" download="CV_Francisco_Hurtado.pdf" class="btn" @click="closeMenu">
             {{ $t('nav.downloadCV') }}
@@ -64,6 +68,10 @@ const toggleMenu = () => {
 
 const closeMenu = () => {
   menuOpen.value = false
+}
+
+const toggleLanguage = () => {
+  locale.value = locale.value === 'es' ? 'en' : 'es'
 }
 
 onMounted(() => {
@@ -159,28 +167,18 @@ onUnmounted(() => {
   width: 100%;
 }
 
-/* Language Select */
-.lang-select {
-  background: transparent;
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-base);
-  outline: none;
+/* Language Button Details */
+.lang-btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+  min-width: 90px;
+  justify-content: center;
 }
 
-.lang-select:hover, .lang-select:focus {
-  border-color: var(--color-accent);
-}
-
-.lang-select option {
-  background: var(--color-bg-secondary);
-  color: var(--color-text-primary);
-  font-weight: 600;
+.flag-icon {
+  width: 20px;
+  height: 15px;
+  border-radius: 2px;
+  object-fit: cover;
 }
 
 /* Mobile Menu Toggle */
