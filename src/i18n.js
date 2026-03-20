@@ -13,7 +13,12 @@ const messages = {
       subtitle: 'Frontend Developer & Software Engineer',
       bio: 'Desarrollador Frontend apasionado por crear soluciones tecnológicas innovadoras. Especializado en desarrollo web moderno, arquitectura de software y diseño de sistemas escalables.',
       viewProjects: 'Ver Proyectos',
-      viewEducation: 'Ver Educación'
+      viewEducation: 'Ver Educación',
+      available: 'Disponible para oportunidades',
+      role: 'Desarrollador Frontend',
+      university: 'UPC - Lima, Perú',
+      openTo: 'Abierto a nuevas oportunidades',
+      passion: 'crear interfaces de usuario increíbles'
     },
     projects: {
       title: 'Proyectos Destacados',
@@ -74,13 +79,17 @@ const messages = {
       subtitle: 'El arsenal tecnológico que utilizo para transformar ideas en experiencias digitales rápidas, seguras y escalables.'
     },
     footer: {
-      tagline: 'Frontend Developer & Software Engineer',
+      tagline: 'Desarrollador Frontend & Ingeniero de Software',
       links: 'Enlaces',
       contact: 'Contacto',
-      followMe: 'Sígueme',
+      followMe: 'Encuéntrame en',
       rights: 'Todos los derechos reservados.',
       madeWith: 'Hecho con',
-      using: 'usando Vue.js'
+      using: 'usando Vue.js',
+      headline: 'Construyamos algo',
+      headlineAccent: 'grandioso.',
+      navLabel: 'Navegación',
+      builtWith: 'Construido con'
     }
   },
   en: {
@@ -95,7 +104,12 @@ const messages = {
       subtitle: 'Frontend Developer & Software Engineer',
       bio: 'Passionate Frontend Developer focused on creating innovative technological solutions. Specialized in modern web development, software architecture, and scalable system design.',
       viewProjects: 'View Projects',
-      viewEducation: 'View Education'
+      viewEducation: 'View Education',
+      available: 'Available for opportunities',
+      role: 'Frontend Developer',
+      university: 'UPC - Lima, Peru',
+      openTo: 'Open to new opportunities',
+      passion: 'building great user interfaces'
     },
     projects: {
       title: 'Featured Projects',
@@ -159,10 +173,14 @@ const messages = {
       tagline: 'Frontend Developer & Software Engineer',
       links: 'Links',
       contact: 'Contact',
-      followMe: 'Follow Me',
+      followMe: 'Find me on',
       rights: 'All rights reserved.',
       madeWith: 'Made with',
-      using: 'using Vue.js'
+      using: 'using Vue.js',
+      headline: "Let's build something",
+      headlineAccent: 'great.',
+      navLabel: 'Navigation',
+      builtWith: 'Built with'
     }
   }
 }
