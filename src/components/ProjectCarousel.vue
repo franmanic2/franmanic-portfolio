@@ -357,7 +357,6 @@ onMounted(async () => {
   pushCommand('ls')
   history.value.push({ type: 'ls' })
   await scrollToBottom()
-  await nextTick(() => inputEl.value?.focus())
 })
 </script>
 
