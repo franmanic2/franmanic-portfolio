@@ -24,9 +24,8 @@
   --spacing-3xl: 6rem;
 
   /* Typography */
-  --font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  --font-mono: "Fira Code", "Courier New", monospace;
+  --font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "Fira Code", "Cascadia Code", "Consolas", "Courier New", monospace;
 
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
@@ -305,11 +304,11 @@ a:hover {
    =================================== */
 
 ::selection {
-  background: var(--color-accent);
-  color: var(--color-bg-primary);
+  background: rgba(57, 211, 83, 0.35);
+  color: #ffffff;
 }
 
 ::-moz-selection {
-  background: var(--color-accent);
-  color: var(--color-bg-primary);
+  background: rgba(57, 211, 83, 0.35);
+  color: #ffffff;
 }
