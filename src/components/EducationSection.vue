@@ -2,89 +2,73 @@
   <section id="education" class="education-section">
     <div class="container">
       <div class="section-header fade-in">
-        <h2 class="section-title">
-          <span class="text-gradient">{{ $t('experience.title') }}</span>
-        </h2>
-        <p class="section-description">
-          {{ $t('experience.subtitle') }}
-        </p>
+        <h2 class="section-title"><span class="text-gradient">{{ $t('experience.title') }}</span></h2>
+        <p class="section-description">{{ $t('experience.subtitle') }}</p>
       </div>
 
       <div class="education-grid">
-        <!-- Experiencia Laboral -->
+        <!-- Work -->
         <div class="education-column">
           <h3 class="column-title">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 7h-4V5l-2-2h-4L8 5v2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zM10 5h4v2h-4V5zm10 15H4V9h16v11z" fill="currentColor"/>
-            </svg>
-            {{ $t('experience.workTitle') }}
+            <span class="col-icon">⎇</span>
+            <span class="col-cmd">git log --</span><span class="col-accent">work</span>
           </h3>
-          <div class="timeline">
-            <div 
-              v-for="(job, index) in workExperience" 
-              :key="index"
-              class="timeline-item"
-            >
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h4 class="item-title">{{ job.position }}</h4>
-                <p class="item-company">{{ job.company }}</p>
-                <p class="item-period">{{ job.period }}</p>
-                <p class="item-description" v-if="job.description">{{ job.description }}</p>
+          <div class="git-log">
+            <div v-for="(job, i) in workExperience" :key="i" class="git-commit">
+              <div class="git-line"></div>
+              <div class="git-dot"></div>
+              <div class="git-body">
+                <div class="git-meta">
+                  <span class="git-hash">{{ job.hash }}</span>
+                  <span class="git-date">{{ job.period }}</span>
+                </div>
+                <p class="git-title">{{ job.position }}</p>
+                <p class="git-org">{{ job.company }}</p>
+                <p class="git-desc" v-if="job.description">{{ job.description }}</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Educación -->
+        <!-- Education -->
         <div class="education-column">
           <h3 class="column-title">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" fill="currentColor"/>
-            </svg>
-            {{ $t('experience.educationTitle') }}
+            <span class="col-icon">🎓</span>
+            <span class="col-cmd">git log --</span><span class="col-accent">education</span>
           </h3>
-          <div class="timeline">
-            <div 
-              v-for="(edu, index) in education" 
-              :key="index"
-              class="timeline-item"
-            >
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h4 class="item-title">{{ edu.degree }}</h4>
-                <p class="item-company">{{ edu.institution }}</p>
-                <p class="item-period">{{ edu.period }}</p>
-                <p class="item-description" v-if="edu.description">{{ edu.description }}</p>
+          <div class="git-log">
+            <div v-for="(edu, i) in education" :key="i" class="git-commit">
+              <div class="git-line"></div>
+              <div class="git-dot"></div>
+              <div class="git-body">
+                <div class="git-meta">
+                  <span class="git-hash">{{ edu.hash }}</span>
+                  <span class="git-date">{{ edu.period }}</span>
+                </div>
+                <p class="git-title">{{ edu.degree }}</p>
+                <p class="git-org">{{ edu.institution }}</p>
+                <p class="git-desc" v-if="edu.description">{{ edu.description }}</p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Certificaciones -->
+        <!-- Certifications -->
         <div class="education-column">
           <h3 class="column-title">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm6 9.09c0 4-2.55 7.7-6 8.83-3.45-1.13-6-4.82-6-8.83V6.31l6-2.12 6 2.12v4.78z" fill="currentColor"/>
-            </svg>
-            {{ $t('experience.certTitle') }}
+            <span class="col-icon">📜</span>
+            <span class="col-cmd">ls </span><span class="col-accent">./certs/</span>
           </h3>
           <div class="certifications-list">
-            <a 
-              v-for="(cert, index) in certifications" 
-              :key="index"
-              :href="cert.link"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="certification-item"
-            >
-              <div class="cert-content">
-                <h4 class="cert-title">{{ cert.name }}</h4>
+            <a v-for="(cert, i) in certifications" :key="i"
+               :href="cert.link" target="_blank" rel="noopener noreferrer"
+               class="cert-item">
+              <span class="cert-file">📄</span>
+              <div class="cert-info">
+                <p class="cert-name">{{ cert.name }}</p>
                 <p class="cert-date">{{ cert.date }}</p>
               </div>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" fill="currentColor"/>
-              </svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
             </a>
           </div>
         </div>
@@ -94,66 +78,25 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-
 const { t } = useI18n()
 
-// Experiencia Laboral
 const workExperience = computed(() => [
-  {
-    position: 'Co-Founder',
-    company: 'Fleemo Partners',
-    period: '2025 - Presente',
-    description: t('experience.work.fleemo.desc')
-  },
-  {
-    position: 'Soporte de Software',
-    company: 'Minera Enproyec',
-    period: 'Mayo 2025 - Agosto 2025',
-    description: t('experience.work.enproyec.desc')
-  },
-  {
-    position: 'Founder',
-    company: 'Frantech',
-    period: '2022 - 2023',
-    description: t('experience.work.frantech.desc')
-  }
+  { hash: 'a3f9c12', position: 'Co-Founder', company: 'Fleemo Partners', period: '2025 – Present', description: t('experience.work.fleemo.desc') },
+  { hash: 'b7e2d08', position: 'Soporte de Software', company: 'Minera Enproyec', period: 'May – Aug 2025', description: t('experience.work.enproyec.desc') },
+  { hash: 'c1a4f55', position: 'Founder', company: 'Frantech', period: '2022 – 2023', description: t('experience.work.frantech.desc') }
 ])
 
-// Educación
 const education = computed(() => [
-  {
-    degree: 'Ingeniería de Software',
-    institution: 'Universidad Peruana de Ciencias Aplicadas',
-    period: '2021 - Presente',
-    description: t('experience.edu.upc.desc')
-  },
-  {
-    degree: 'English Grade - WeTalk UPC',
-    institution: 'Universidad Peruana de Ciencias Aplicadas',
-    period: '2024',
-    description: t('experience.edu.english.desc')
-  }
+  { hash: 'd9b3e77', degree: 'Ingeniería de Software', institution: 'Universidad Peruana de Ciencias Aplicadas', period: '2021 – Present', description: t('experience.edu.upc.desc') },
+  { hash: 'e5f1a22', degree: 'English Grade – WeTalk UPC', institution: 'Universidad Peruana de Ciencias Aplicadas', period: '2024', description: t('experience.edu.english.desc') }
 ])
 
-// Certificaciones
 const certifications = ref([
-  {
-    name: 'IBM Cibersecurity Analyst',
-    date: '2024',
-    link: 'https://www.coursera.org/account/accomplishments/specialization/T3PKKL5M5FV9'
-  },
-  {
-    name: 'Google IT Support',
-    date: '2024',
-    link: 'https://www.coursera.org/account/accomplishments/specialization/8U8EGAO8XLBJ'
-  },
-  {
-    name: 'Scrum Fundamentals Certified',
-    date: '2022',
-    link: 'https://www.scrumstudy.com/certification/verify?type=SFC&number=952629'
-  }
+  { name: 'IBM Cibersecurity Analyst', date: '2024', link: 'https://www.coursera.org/account/accomplishments/specialization/T3PKKL5M5FV9' },
+  { name: 'Google IT Support', date: '2024', link: 'https://www.coursera.org/account/accomplishments/specialization/8U8EGAO8XLBJ' },
+  { name: 'Scrum Fundamentals Certified', date: '2022', link: 'https://www.scrumstudy.com/certification/verify?type=SFC&number=952629' }
 ])
 </script>
 
@@ -162,244 +105,101 @@ const certifications = ref([
   padding: var(--spacing-3xl) 0;
   position: relative;
   background-color: var(--color-bg-secondary);
-  background-image: repeating-linear-gradient(
-    45deg,
-    var(--color-bg-secondary),
-    var(--color-bg-secondary) 10px,
-    rgba(255, 255, 255, 0.015) 10px,
-    rgba(255, 255, 255, 0.015) 11px
-  );
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
-.education-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom, var(--color-bg-primary) 0%, transparent 15%, transparent 85%, var(--color-bg-primary) 100%);
-  pointer-events: none;
-  z-index: 0;
+.education-section::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--color-bg-secondary));
+  pointer-events: none; z-index: 0;
 }
 
-.container {
-  position: relative;
-  z-index: 1;
-}
+.container { position:relative; z-index:1; }
+.section-header { text-align:center; margin-bottom:var(--spacing-3xl); }
+.section-title { font-size:var(--font-size-4xl); margin-bottom:var(--spacing-md); }
+.section-description { font-size:var(--font-size-lg); color:var(--color-text-secondary); max-width:600px; margin:0 auto; }
 
-/* Section Header */
-.section-header {
-  text-align: center;
-  margin-bottom: var(--spacing-3xl);
-}
+.education-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--spacing-xl); max-width:1200px; margin:0 auto; }
 
-.section-title {
-  font-size: var(--font-size-4xl);
-  margin-bottom: var(--spacing-md);
-}
-
-.section-description {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-secondary);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* Education Grid */
-.education-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-xl);
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.education-column {
-  position: relative;
-}
-
-/* Column Title */
 .column-title {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  font-size: var(--font-size-xl);
-  font-weight: 700;
-  color: var(--color-text-primary);
-  margin-bottom: var(--spacing-xl);
-  padding-bottom: var(--spacing-md);
-  border-bottom: 2px solid var(--color-border);
+  display:flex; align-items:center; gap:8px;
+  font-family:'Fira Code','SF Mono',monospace; font-size:.85rem; font-weight:700;
+  margin-bottom:var(--spacing-xl); padding-bottom:var(--spacing-md);
+  border-bottom:1px solid rgba(57,211,83,.25);
+  color:var(--color-text-secondary);
 }
+.col-icon { font-size:1rem; }
+.col-cmd  { color:rgba(255,255,255,.35); }
+.col-accent { color:#39d353; }
 
-.column-title svg {
-  color: var(--color-accent);
+/* git log */
+.git-log { display:flex; flex-direction:column; }
+.git-commit { display:flex; gap:14px; position:relative; padding-bottom:var(--spacing-xl); }
+.git-commit:last-child { padding-bottom:0; }
+.git-commit:last-child .git-line { display:none; }
+.git-line {
+  position:absolute; left:6px; top:14px; bottom:0;
+  width:2px; background:linear-gradient(to bottom,#39d353,rgba(57,211,83,.1));
 }
-
-/* Timeline */
-.timeline {
-  position: relative;
-  padding-left: var(--spacing-lg);
+.git-dot {
+  width:14px; height:14px; border-radius:50%;
+  background:#0d1117; border:2px solid #39d353;
+  flex-shrink:0; margin-top:2px;
+  box-shadow:0 0 8px rgba(57,211,83,.4); position:relative; z-index:1;
 }
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--color-border);
+.git-body {
+  flex:1; min-width:0;
+  background:var(--color-bg-card); border:1px solid var(--color-border);
+  border-radius:var(--radius-lg); padding:var(--spacing-md);
+  transition:all var(--transition-base);
 }
+.git-body:hover { border-color:rgba(57,211,83,.4); transform:translateX(4px); box-shadow:0 0 14px rgba(57,211,83,.08); }
+.git-meta { display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; flex-wrap:wrap; gap:4px; }
+.git-hash { font-family:'Fira Code',monospace; font-size:.7rem; color:#58a6ff; background:rgba(88,166,255,.1); padding:1px 6px; border-radius:4px; }
+.git-date { font-family:'Fira Code',monospace; font-size:.68rem; color:rgba(255,255,255,.3); }
+.git-title { font-size:var(--font-size-base); font-weight:700; color:var(--color-text-primary); margin:0 0 2px; }
+.git-org { font-size:var(--font-size-sm); color:#39d353; font-weight:600; margin:0 0 6px; }
+.git-desc { font-size:var(--font-size-sm); color:var(--color-text-secondary); line-height:1.6; margin:0; }
 
-.timeline-item {
-  position: relative;
-  margin-bottom: var(--spacing-xl);
-  padding-bottom: var(--spacing-xl);
+/* certs */
+.certifications-list { display:flex; flex-direction:column; gap:var(--spacing-md); }
+.cert-item {
+  display:flex; align-items:center; gap:var(--spacing-md);
+  padding:var(--spacing-md); background:var(--color-bg-card);
+  border:1px solid var(--color-border); border-radius:var(--radius-lg);
+  text-decoration:none; transition:all var(--transition-base);
 }
+.cert-item:hover { border-color:rgba(57,211,83,.4); transform:translateX(4px); }
+.cert-file { font-size:1.1rem; flex-shrink:0; }
+.cert-info { flex:1; }
+.cert-name { font-size:var(--font-size-sm); font-weight:600; color:var(--color-text-primary); margin:0 0 2px; }
+.cert-date { font-family:'Fira Code',monospace; font-size:.7rem; color:var(--color-text-secondary); margin:0; }
+.cert-item svg { color:#39d353; flex-shrink:0; transition:transform var(--transition-base); }
+.cert-item:hover svg { transform:translate(2px,-2px); }
 
-.timeline-item:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
+@media(max-width:1024px) { .education-grid { grid-template-columns:1fr; gap:var(--spacing-2xl); } }
+@media(max-width:768px)  { .section-title { font-size:var(--font-size-3xl); } }
 
-.timeline-dot {
-  position: absolute;
-  left: calc(-1 * var(--spacing-lg) - 6px);
-  top: 4px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--color-bg-primary);
-  border: 3px solid var(--color-accent);
-  z-index: 1;
-}
-
-.timeline-content {
-  background: var(--color-bg-card);
-  padding: var(--spacing-md);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
-  transition: all var(--transition-base);
-}
-
-.timeline-content:hover {
-  border-color: var(--color-accent);
-  transform: translateX(4px);
-  box-shadow: var(--shadow-md);
-}
-
-.item-title {
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  color: var(--color-text-primary);
-  margin-bottom: var(--spacing-xs);
-}
-
-.item-company {
-  font-size: var(--font-size-base);
-  color: var(--color-accent);
-  margin-bottom: var(--spacing-xs);
-  font-weight: 600;
-}
-
-.item-period {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-  margin-bottom: var(--spacing-sm);
-}
-
-.item-description {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* Certifications List */
-.certifications-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.certification-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--spacing-md);
-  padding: var(--spacing-md);
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  text-decoration: none;
-  transition: all var(--transition-base);
-}
-
-.certification-item:hover {
-  border-color: var(--color-accent);
-  transform: translateX(4px);
-  box-shadow: var(--shadow-md);
-}
-
-.certification-item:hover svg {
-  transform: translate(2px, -2px);
-}
-
-.cert-content {
-  flex: 1;
-}
-
-.cert-title {
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  color: var(--color-text-primary);
-  margin-bottom: var(--spacing-xs);
-}
-
-.cert-date {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-  margin: 0;
-}
-
-.certification-item svg {
-  color: var(--color-accent);
-  flex-shrink: 0;
-  transition: transform var(--transition-base);
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .education-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-2xl);
-  }
-  
-  .column-title {
-    font-size: var(--font-size-2xl);
-  }
-}
-
-@media (max-width: 768px) {
-  .section-title {
-    font-size: var(--font-size-3xl);
-  }
-  
-  .timeline {
-    padding-left: var(--spacing-md);
-  }
-  
-  .timeline-dot {
-    left: calc(-1 * var(--spacing-md) - 6px);
-  }
-  
-  .timeline-content {
-    padding: var(--spacing-sm);
-  }
-  
-  .item-title {
-    font-size: var(--font-size-base);
-  }
+@media(max-width:600px) {
+  .education-section { padding: var(--spacing-2xl) 0; }
+  .container  { padding: 0 1.25rem; }
+  .section-header { margin-bottom: var(--spacing-2xl); }
+  .section-title { font-size: var(--font-size-2xl); }
+  .section-description { font-size: var(--font-size-base); }
+  .column-title { font-size: 0.78rem; }
+  .git-body { padding: var(--spacing-sm) var(--spacing-md); }
+  .git-title { font-size: var(--font-size-sm); }
+  .git-org   { font-size: 0.75rem; }
+  .git-desc  { font-size: 0.75rem; }
+  .git-meta  { flex-direction: column; align-items: flex-start; gap: 2px; }
+  .cert-item { padding: var(--spacing-sm) var(--spacing-md); }
+  .cert-name { font-size: 0.78rem; }
+  /* Disable translateX hover on touch */
+  .git-body:hover { transform: none; }
+  .cert-item:hover { transform: none; }
 }
 </style>
