@@ -1,245 +1,359 @@
 <template>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <!-- Brand -->
-        <div class="footer-brand">
-          <h3 class="brand-name">Francisco Hurtado</h3>
-          <p class="brand-tagline">{{ $t('footer.tagline') }}</p>
+  <footer id="footer" class="footer">
+
+    <!-- Top glow accent -->
+    <div class="footer-glow"></div>
+
+    <div class="footer-container">
+
+      <!-- Big headline -->
+      <div class="footer-hero">
+        <p class="footer-eyebrow">
+          <span class="ey-slash">//</span> {{ $t('footer.contact') }}
+        </p>
+        <h2 class="footer-headline">
+          {{ $t('footer.headline') }}<br/><span class="text-gradient">{{ $t('footer.headlineAccent') }}</span>
+        </h2>
+        <a href="mailto:frhurtado10@gmail.com" class="footer-cta">
+          frhurtado10@gmail.com
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <!-- Divider with closing tag -->
+      <div class="footer-divider">
+        <span class="divider-tag">&lt;/portfolio&gt;</span>
+        <div class="divider-line"></div>
+      </div>
+
+      <!-- Three-column links area -->
+      <div class="footer-links-grid">
+
+        <!-- Col 1: Navigation -->
+        <div class="footer-col">
+          <p class="footer-col-label"><span class="col-hash">#</span> {{ $t('footer.navLabel') }}</p>
+          <nav class="footer-nav">
+            <a href="#hero" class="footer-nav-link"><span class="nav-arr">→</span> {{ $t('nav.home') }}</a>
+            <a href="#projects" class="footer-nav-link"><span class="nav-arr">→</span> {{ $t('nav.projects') }}</a>
+            <a href="#education" class="footer-nav-link"><span class="nav-arr">→</span> {{ $t('nav.education') }}</a>
+            <a href="/CV.pdf" download class="footer-nav-link"><span class="nav-arr">→</span> Download CV</a>
+          </nav>
         </div>
 
-        <!-- Quick Links -->
-        <div class="footer-links">
-          <h4 class="footer-heading">{{ $t('footer.links') }}</h4>
-          <ul class="link-list">
-            <li><a href="#hero">{{ $t('nav.home') }}</a></li>
-            <li><a href="#projects">{{ $t('nav.projects') }}</a></li>
-            <li><a href="#education">{{ $t('nav.education') }}</a></li>
-            <li><a href="https://www.linkedin.com/in/francisco-hurtado-p-0b9602301/" target="_blank">LinkedIn</a></li>
-            <li><a href="https://github.com/franmanic" target="_blank">GitHub</a></li>
-          </ul>
+        <!-- Col 2: Find me on -->
+        <div class="footer-col">
+          <p class="footer-col-label"><span class="col-hash">#</span> {{ $t('footer.followMe') }}</p>
+          <nav class="footer-nav">
+            <a href="https://github.com/franmanic2" target="_blank" rel="noopener noreferrer" class="footer-nav-link">
+              <span class="nav-arr">→</span> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/francisco-hurtado-p-0b9602301/" target="_blank" rel="noopener noreferrer" class="footer-nav-link">
+              <span class="nav-arr">→</span> LinkedIn
+            </a>
+            <a href="https://www.instagram.com/franmanic" target="_blank" rel="noopener noreferrer" class="footer-nav-link">
+              <span class="nav-arr">→</span> Instagram
+            </a>
+            <a href="https://www.tiktok.com/@franmanic" target="_blank" rel="noopener noreferrer" class="footer-nav-link">
+              <span class="nav-arr">→</span> TikTok
+            </a>
+          </nav>
         </div>
 
-        <!-- Contact -->
-        <div class="footer-contact">
-          <h4 class="footer-heading">{{ $t('footer.contact') }}</h4>
-          <ul class="contact-list">
-            <li>
-              <a href="mailto:frhurtado10@gmail.com">
-                frhurtado10@gmail.com
-              </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/francisco-hurtado-p-0b9602301/" target="_blank">
-                LinkedIn
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Social -->
-        <div class="footer-social">
-          <h4 class="footer-heading">{{ $t('footer.followMe') }}</h4>
-          <div class="social-icons">
-            <a 
-              href="https://www.linkedin.com/in/francisco-hurtado-p-0b9602301/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              class="social-icon"
-              aria-label="LinkedIn"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="currentColor"/>
-              </svg>
-            </a>
-
-            <a 
-              href="https://www.instagram.com/franmanic" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              class="social-icon"
-              aria-label="Instagram"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill="currentColor"/>
-              </svg>
-            </a>
-
-            <a 
-              href="https://www.tiktok.com/@franmanic" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              class="social-icon"
-              aria-label="TikTok"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z" fill="currentColor"/>
-              </svg>
-            </a>
-
-            <a 
-              href="https://github.com/franmanic2" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              class="social-icon"
-              aria-label="GitHub"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" fill="currentColor"/>
-              </svg>
-            </a>
+        <!-- Col 3: Stack snippet -->
+        <div class="footer-col">
+          <p class="footer-col-label"><span class="col-hash">#</span> {{ $t('footer.builtWith') }}</p>
+          <div class="footer-snippet">
+            <span class="sn-kw">const</span>
+            <span class="sn-var"> stack</span>
+            <span class="sn-op"> = </span>
+            <span class="sn-brace">[</span>
+            <br>&nbsp;&nbsp;<span class="sn-str">"Vue.js"</span><span class="sn-p">,</span>
+            <br>&nbsp;&nbsp;<span class="sn-str">"CSS"</span><span class="sn-p">,</span>
+            <br>&nbsp;&nbsp;<span class="sn-str">"Vite"</span>
+            <br><span class="sn-brace">]</span>
           </div>
         </div>
+
       </div>
 
-      <!-- Copyright -->
-      <div class="footer-bottom">
-        <p class="copyright">
-          © {{ currentYear }} Francisco Hurtado. {{ $t('footer.rights') }}
-        </p>
-        <p class="made-with">
-          {{ $t('footer.madeWith') }} 
-          <span class="heart">♥</span> 
-          {{ $t('footer.using') }}
-        </p>
+    </div>
+
+    <!-- IDE Status Bar – full width, outside container -->
+    <div class="footer-statusbar">
+      <div class="sb-left">
+        <span class="sb-branch">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5C7 3.9 7.9 3 9 3s2 .9 2 2-.9 2-2 2-2-.9-2-2zm12 0c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2zM9 7c-1.3 0-2.4.84-2.82 2H5v2h1.18C6.6 12.16 7.7 13 9 13c1.86 0 3-1.5 3-3V9h3.18C15.6 10.16 16.7 11 18 11c1.3 0 2.4-.84 2.82-2H22V7h-1.18C20.4 5.84 19.3 5 18 5c-1.86 0-3 1.5-3 3H12V8c0-1.5-1.14-3-3-1z"/></svg>
+          main
+        </span>
+        <span class="sb-file">portfolio/index.vue</span>
+      </div>
+      <div class="sb-center">
+        © {{ currentYear }} · Francisco Hurtado · {{ $t('footer.rights') }}
+      </div>
+      <div class="sb-right">
+        <span class="sb-heart">
+          {{ $t('footer.madeWith') }} <span class="heart">♥</span> {{ $t('footer.using') }}
+        </span>
+        <span class="sb-encoding">UTF-8</span>
+        <span class="sb-lang">Vue</span>
       </div>
     </div>
+
   </footer>
 </template>
 
 <script setup>
 import { computed } from 'vue'
-
+import { useI18n } from 'vue-i18n'
+useI18n()
 const currentYear = computed(() => new Date().getFullYear())
 </script>
 
 <style scoped>
 .footer {
-  background: var(--color-bg-secondary);
-  border-top: 1px solid var(--color-border);
-  padding: var(--spacing-3xl) 0 var(--spacing-xl);
   position: relative;
-  z-index: var(--z-content);
+  background: var(--color-bg-secondary);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
 }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-xl);
-  margin-bottom: var(--spacing-xl);
+/* Top glow */
+.footer-glow {
+  position: absolute;
+  top: -80px; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 200px;
+  background: radial-gradient(ellipse, rgba(57,211,83,0.08) 0%, transparent 70%);
+  pointer-events: none;
 }
 
-/* Brand */
-.footer-brand {
-  max-width: 300px;
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+  position: relative;
+  z-index: 1;
 }
 
-.brand-name {
-  font-size: var(--font-size-xl);
-  font-weight: 700;
-  margin-bottom: var(--spacing-xs);
-  color: var(--color-text-primary);
+/* Hero section */
+.footer-hero {
+  padding: 5rem 0 3.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
 }
 
-.brand-tagline {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-}
-
-/* Headings */
-.footer-heading {
-  font-size: var(--font-size-base);
-  font-weight: 700;
-  margin-bottom: var(--spacing-md);
-  color: var(--color-text-primary);
+.footer-eyebrow {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.3);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.15em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* Links */
-.link-list,
-.contact-list {
-  list-style: none;
-  padding: 0;
+.ey-slash { color: #39d353; }
+
+.footer-headline {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: #e6edf3;
   margin: 0;
 }
 
-.link-list li,
-.contact-list li {
-  margin-bottom: var(--spacing-sm);
-}
-
-.link-list a,
-.contact-list a {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-  transition: color var(--transition-base);
-}
-
-.link-list a:hover,
-.contact-list a:hover {
-  color: var(--color-accent);
-}
-
-/* Social Icons */
-.social-icons {
-  display: flex;
-  gap: var(--spacing-sm);
-}
-
-.social-icon {
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--color-border);
-  border-radius: 50%;
-  display: flex;
+.footer-cta {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  color: var(--color-text-secondary);
-  transition: all var(--transition-base);
+  gap: 10px;
+  padding: 14px 28px;
+  border: 1px solid rgba(57,211,83,0.4);
+  background: rgba(57,211,83,0.08);
+  border-radius: 12px;
+  color: #39d353;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
 }
 
-.social-icon:hover {
-  background: var(--color-accent);
-  color: var(--color-bg-primary);
-  border-color: var(--color-accent);
+.footer-cta:hover {
+  background: rgba(57,211,83,0.18);
+  border-color: rgba(57,211,83,0.7);
   transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(57,211,83,0.15);
+  color: #39d353;
 }
 
-/* Footer Bottom */
-.footer-bottom {
-  padding-top: var(--spacing-xl);
-  border-top: 1px solid var(--color-border);
+.footer-cta svg { transition: transform 0.25s ease; }
+.footer-cta:hover svg { transform: translateX(4px); }
+
+/* Divider */
+.footer-divider {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: var(--spacing-md);
+  gap: 16px;
+  margin-bottom: 3rem;
 }
 
-.copyright,
-.made-with {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-  margin: 0;
+.divider-tag {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  color: rgba(57,211,83,0.5);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, rgba(255,255,255,0.06), transparent);
+}
+
+/* Three columns */
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding-bottom: 3rem;
+}
+
+.footer-col-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.28);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 1.2rem;
+}
+
+.col-hash { color: #39d353; margin-right: 4px; }
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.footer-nav-link:hover {
+  color: #e6edf3;
+  transform: translateX(4px);
+}
+
+.nav-arr {
+  color: #39d353;
+  font-size: 0.85em;
+  transition: transform 0.2s;
+}
+
+.footer-nav-link:hover .nav-arr { transform: translateX(2px); }
+
+/* Code snippet */
+.footer-snippet {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+
+.sn-kw   { color: #569cd6; }
+.sn-var  { color: #9cdcfe; }
+.sn-op   { color: rgba(255,255,255,0.35); }
+.sn-str  { color: #ce9178; }
+.sn-p    { color: rgba(255,255,255,0.3); }
+.sn-brace { color: #ffd700; }
+
+/* IDE Status bar – sits outside .footer-container, so it auto-fills 100% width */
+.footer-statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: #161b22;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.3);
+  gap: 1rem;
+  width: 100%;
+}
+
+.sb-left, .sb-right { display: flex; align-items: center; gap: 14px; }
+.sb-center { color: rgba(255,255,255,0.25); text-align: center; }
+
+.sb-branch {
+  display: flex; align-items: center; gap: 5px;
+  color: #39d353; font-weight: 700;
+}
+
+.sb-file { color: rgba(255,255,255,0.3); }
+
+.sb-encoding, .sb-lang {
+  padding: 0 8px;
+  border-left: 1px solid rgba(255,255,255,0.06);
+}
+
+.sb-lang { color: #58a6ff; }
+
+.sb-heart { display: flex; align-items: center; gap: 4px; }
 
 .heart {
-  color: #ff0000;
-  display: inline-block;
-  animation: pulse 1.5s ease-in-out infinite;
+  color: #f85149;
+  animation: pulse-h 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-h {
+  0%,100% { opacity: 1; }
+  50%      { opacity: 0.4; }
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-  }
-  
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-  }
+@media (max-width: 860px) {
+  .footer-links-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .footer-statusbar  { flex-direction: column; text-align: center; gap: 6px; padding: 12px; }
+  .sb-right { justify-content: center; }
+  .sb-left  { justify-content: center; }
+}
+
+@media (max-width: 560px) {
+  .footer-hero { padding: 3rem 0 2rem; gap: 1rem; }
+  .footer-headline { font-size: 1.8rem; }
+  .footer-links-grid { grid-template-columns: 1fr; }
+  .footer-container { padding: 0 1.25rem; }
+  .footer-cta { width: 100%; justify-content: center; font-size: 0.85rem; padding: 12px 20px; }
+  .footer-eyebrow { font-size: 0.75rem; }
+  .divider-tag { font-size: 0.72rem; }
+}
+
+@media (max-width: 420px) {
+  .footer-headline { font-size: 1.55rem; }
+  .footer-col-label { font-size: 0.68rem; }
+  .footer-nav-link { font-size: 0.82rem; }
+  .sb-encoding { display: none; }
+  .sb-heart    { display: none; }
 }
 </style>
