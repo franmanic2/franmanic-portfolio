@@ -25,6 +25,7 @@ const messages = {
       description: 'Una selección de trabajos en los que he contribuido y desarrollado',
       contribution: 'Mi aporte:',
       viewGithub: 'Ver en GitHub',
+      viewWebsite: 'Visitar Web',
       items: {
         quasar: {
           desc: 'Landing page para la empresa de venta de landing pages.',
@@ -63,8 +64,8 @@ const messages = {
       educationTitle: 'Educación',
       certTitle: 'Certificaciones',
       work: {
-        fleemo: {
-          desc: 'Asesoramiento en estrategias de crecimiento en redes sociales y desarrollo de paginas web'
+        quasar: {
+          desc: 'Fundador y Desarrollador Frontend de QuasarLabs, una empresa dedicada al desarrollo de landing pages para empresas.'
         },
         enproyec: {
           desc: 'Practicante de soporte y desarrollo de software'
@@ -124,6 +125,7 @@ const messages = {
       description: 'A selection of work I have contributed to and developed',
       contribution: 'My contribution:',
       viewGithub: 'View on GitHub',
+      viewWebsite: 'Visit Website',
       items: {
         quasar: {
           desc: 'Landing page for the landing page development company.',
@@ -162,8 +164,8 @@ const messages = {
       educationTitle: 'Education',
       certTitle: 'Certifications',
       work: {
-        fleemo: {
-          desc: 'Advising on social media growth strategies and web development'
+        quasar: {
+          desc: 'Founder & Frontend Developer of QuasarLabs, a company dedicated to the development of landing pages for companies.'
         },
         enproyec: {
           desc: 'Software support and development intern'

@@ -83,9 +83,9 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
 const workExperience = computed(() => [
-  { hash: 'a3f9c12', position: 'Co-Founder', company: 'Fleemo Partners', period: '2025 – Present', description: t('experience.work.fleemo.desc') },
-  { hash: 'b7e2d08', position: 'Soporte de Software', company: 'Minera Enproyec', period: 'May – Aug 2025', description: t('experience.work.enproyec.desc') },
-  { hash: 'c1a4f55', position: 'Founder', company: 'Frantech', period: '2022 – 2023', description: t('experience.work.frantech.desc') }
+  { hash: 'a3f9c12', position: 'Founder & Frontend Developer', company: 'QuasarLabs', period: '2025 – Present', description: t('experience.work.quasar.desc') },
+  { hash: 'b7e2d08', position: 'Software Support', company: 'Minera Enproyec', period: 'May – Aug 2025', description: t('experience.work.enproyec.desc') },
+  { hash: 'c1a4f55', position: 'Founder & IT Support', company: 'Frantech', period: '2022 – 2023', description: t('experience.work.frantech.desc') }
 ])
 
 const education = computed(() => [

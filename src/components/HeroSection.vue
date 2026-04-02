@@ -87,7 +87,7 @@
               <div class="cc-line">&nbsp;&nbsp;<span class="cc-key">location</span><span class="cc-op">: </span><span class="cc-str">"Lima, Peru 🇵🇪"</span><span class="cc-punc">,</span></div>
                             <div class="cc-line">&nbsp;&nbsp;<span class="cc-key">role</span><span class="cc-op">: </span><span class="cc-str">"{{ $t('hero.role') }}"</span><span class="cc-punc">,</span></div>
               <div class="cc-line">&nbsp;&nbsp;<span class="cc-key">university</span><span class="cc-op">: </span><span class="cc-str">"{{ $t('hero.university') }}"</span><span class="cc-punc">,</span></div>
-              <div class="cc-line">&nbsp;&nbsp;<span class="cc-key">stack</span><span class="cc-op">: </span><span class="cc-brace">[</span><span class="cc-str">"Vue"</span><span class="cc-punc">, </span><span class="cc-str">"HTML"</span><span class="cc-punc">, </span><span class="cc-str">"CSS"</span><span class="cc-brace">]</span><span class="cc-punc">,</span></div>
+              <div class="cc-line">&nbsp;&nbsp;<span class="cc-key">stack</span><span class="cc-op">: </span><span class="cc-brace">[</span><span class="cc-str">"Vue"</span><span class="cc-punc">, </span><span class="cc-str">"React"</span><span class="cc-punc">, </span><span class="cc-str">"Astro5"</span><span class="cc-brace">]</span><span class="cc-punc">,</span></div>
                             <div class="cc-line">&nbsp;&nbsp;<span class="cc-key">openTo</span><span class="cc-op">: </span><span class="cc-bool">true</span><span class="cc-punc">,</span></div>
               <div class="cc-line"><span class="cc-brace">&#125;</span></div>
               <div class="cc-line cc-blank"></div>
