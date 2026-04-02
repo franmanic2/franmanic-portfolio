@@ -180,12 +180,21 @@ const { t } = useI18n()
 // ── Projects ──────────────────────────────────────────────────────
 const projects = computed(() => [
   {
-    slug: 'fleemo-partners',
-    title: 'FleemoPartners Landing Page',
-    description: t('projects.items.fleemo.desc'),
-    contribution: t('projects.items.fleemo.cont'),
-    image: 'https://i.postimg.cc/BvsRqfZQ/Captura-de-pantalla-2025-11-27-010805.png',
-    github: 'https://github.com/FleemoPartners/fleemo-webapp',
+    slug: 'quasar',
+    title: 'Quasar Landing Page',
+    description: t('projects.items.quasar.desc'),
+    contribution: t('projects.items.quasar.cont'),
+    image: 'https://i.postimg.cc/bJDn2XRX/1.png',
+    github: 'https://quasarlabs-seven.vercel.app/',
+    tags: ['Astro', 'HTML', 'CSS', 'JavaScript']
+  },
+  {
+    slug: 'sportli',
+    title: 'SportliGym Web Application',
+    description: t('projects.items.sportli.desc'),
+    contribution: t('projects.items.sportli.cont'),
+    image: 'https://i.postimg.cc/T3dWJ5ck/3.png',
+    github: 'https://github.com/franmanic2/sportli',
     tags: ['Vue.js', 'HTML', 'CSS', 'JavaScript']
   },
   {
@@ -195,6 +204,15 @@ const projects = computed(() => [
     contribution: t('projects.items.eraser.cont'),
     image: 'https://i.postimg.cc/6pHdTXmn/Captura-de-pantalla-2025-11-30-220846.png',
     github: 'http://github.com/franmanic2/text-eraser-web',
+    tags: ['Vue.js', 'HTML', 'CSS', 'JavaScript']
+  },
+  {
+    slug: 'guionify',
+    title: 'Guionify Web Application',
+    description: t('projects.items.guionify.desc'),
+    contribution: t('projects.items.guionify.cont'),
+    image: 'https://i.postimg.cc/C1qZxGFK/2.png',
+    github: 'http://github.com/franmanic2/guionify',
     tags: ['Vue.js', 'HTML', 'CSS', 'JavaScript']
   },
   {

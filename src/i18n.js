@@ -26,12 +26,20 @@ const messages = {
       contribution: 'Mi aporte:',
       viewGithub: 'Ver en GitHub',
       items: {
-        fleemo: {
-          desc: 'Landing page para la empresa de asesoria en redes sociales FleemoPartners.',
-          cont: 'Desarrollo del frontend con Vue.js'
+        quasar: {
+          desc: 'Landing page para la empresa de venta de landing pages.',
+          cont: 'Desarrollo del frontend con Astro'
+        },
+        sportli: {
+          desc: 'Aplicacion web para gestion de clientes dentro de un gimnasio.',
+          cont: 'Desarrollo del frontend con Vue.js y Firebase'
         },
         eraser: {
           desc: 'Web para borrado de textos especificos dentro de textos grandes',
+          cont: 'Desarrollo del frontend con Vue.js'
+        },
+        guionify: {
+          desc: 'Aplicacion web para la creacion de guiones para videos.',
           cont: 'Desarrollo del frontend con Vue.js'
         },
         elixir: {
@@ -117,12 +125,20 @@ const messages = {
       contribution: 'My contribution:',
       viewGithub: 'View on GitHub',
       items: {
-        fleemo: {
-          desc: 'Landing page for the social media consulting company FleemoPartners.',
-          cont: 'Frontend development with Vue.js'
+        quasar: {
+          desc: 'Landing page for the landing page development company.',
+          cont: 'Frontend development with Astro'
+        },
+        sportli: {
+          desc: 'Web application for managing clients within a gym.',
+          cont: 'Frontend development with Vue.js and Firebase'
         },
         eraser: {
           desc: 'Web tool for erasing specific texts within large texts',
+          cont: 'Frontend development with Vue.js'
+        },
+        guionify: {
+          desc: 'Web application for creating scripts for videos.',
           cont: 'Frontend development with Vue.js'
         },
         elixir: {
