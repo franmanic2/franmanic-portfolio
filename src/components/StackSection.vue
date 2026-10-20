@@ -1,269 +1,128 @@
 <template>
-  <section class="section tech-section">
+  <section id="stack" class="section">
     <div class="container">
-      <div class="section-header fade-in">
-        <h2 class="section-title"><span class="text-gradient">{{ $t('stack.title') }}</span></h2>
-        <p class="section-description">{{ $t('stack.subtitle') }}</p>
-      </div>
+      <h2 class="section-label"><span class="section-num">02</span> ── <TypedCommand text="cat stack.txt" /></h2>
 
-      <!-- Code block window -->
-      <div class="code-window fade-in">
-        <div class="code-titlebar">
-          <div class="code-dots">
-            <span class="cdot cdot--red"></span>
-            <span class="cdot cdot--yellow"></span>
-            <span class="cdot cdot--green"></span>
-          </div>
-          <span class="code-filename">francisco.config.js</span>
-          <div></div>
-        </div>
-        <div class="code-body">
-          <div class="code-line">
-            <span class="ln">1</span>
-            <span class="c-comment">// Francisco Hurtado — Tech Stack</span>
-          </div>
-          <div class="code-line">
-            <span class="ln">2</span>
-          </div>
-          <div class="code-line">
-            <span class="ln">3</span>
-            <span class="c-kw">const </span>
-            <span class="c-var">developer</span>
-            <span class="c-op"> = </span>
-            <span class="c-brace">&#123;</span>
-          </div>
-          <div class="code-line">
-            <span class="ln">4</span>
-            &nbsp;&nbsp;<span class="c-key">name</span>
-            <span class="c-op">: </span>
-            <span class="c-str">"Francisco Hurtado"</span><span class="c-punc">,</span>
-          </div>
-          <div class="code-line">
-            <span class="ln">5</span>
-            &nbsp;&nbsp;<span class="c-key">role</span>
-            <span class="c-op">: </span>
-            <span class="c-str">"Frontend Developer"</span><span class="c-punc">,</span>
-          </div>
-          <div class="code-line">
-            <span class="ln">6</span>
-          </div>
-          <div class="code-line">
-            <span class="ln">7</span>
-            &nbsp;&nbsp;<span class="c-key">stack</span>
-            <span class="c-op">: </span>
-            <span class="c-brace">[</span>
-          </div>
-          <div class="code-line" v-for="(tech, i) in techs" :key="tech.name">
-            <span class="ln">{{ 8 + i }}</span>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <span
-              class="c-tech-badge"
-              :title="tech.name"
-              @mouseenter="hoveredTech = tech.name"
-              @mouseleave="hoveredTech = null"
-              :class="{ active: hoveredTech === tech.name }"
-            >
-              <img :src="tech.icon" :alt="tech.name" class="tech-logo" />
-              <span class="c-str">"{{ tech.name }}"</span>
-              <span v-if="i < techs.length - 1" class="c-punc">,</span>
-            </span>
-          </div>
-          <div class="code-line">
-            <span class="ln">{{ 8 + techs.length }}</span>
-            &nbsp;&nbsp;<span class="c-brace">]</span><span class="c-punc">,</span>
-          </div>
-          <div class="code-line">
-            <span class="ln">{{ 9 + techs.length }}</span>
-          </div>
-          <div class="code-line">
-            <span class="ln">{{ 10 + techs.length }}</span>
-            &nbsp;&nbsp;<span class="c-key">passion</span>
-            <span class="c-op">: </span>
-            <span class="c-str">"building great user interfaces"</span>
-          </div>
-          <div class="code-line">
-            <span class="ln">{{ 11 + techs.length }}</span>
-            <span class="c-brace">&#125;</span>
-          </div>
-          <div class="code-line">
-            <span class="ln">{{ 12 + techs.length }}</span>
-          </div>
-          <div class="code-line">
-            <span class="ln">{{ 13 + techs.length }}</span>
-            <span class="c-kw">export default </span>
-            <span class="c-var">developer</span>
-            <span class="c-punc">;</span>
-          </div>
-        </div>
+      <p class="stack-dir">frontend/</p>
+      <ul class="stack-grid">
+        <li v-for="(tech, i) in techs" :key="tech" v-reveal="i * 50" class="stack-cell">
+          <span class="stack-name">{{ tech }}</span>
+          <span class="stack-idx">{{ String(i + 1).padStart(2, '0') }}</span>
+        </li>
+      </ul>
+
+      <div class="stack-extra" v-reveal>
+        <p class="stack-dir">ai_workflow/ <span class="stack-note">— vibe coding</span></p>
+        <ul class="workflow">
+          <li v-for="tool in workflow" :key="tool.name" class="workflow-row">
+            <span><span class="workflow-arrow">→</span> {{ tool.name }}</span>
+            <span class="workflow-use">{{ tool.use }}</span>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import vueLogo    from '@/assets/vue.svg'
-import astroLogo  from '@/assets/astro.svg'
-import reactLogo  from '@/assets/react.svg'
-import nextjsLogo from '@/assets/nextjs.svg'
-import html5Logo  from '@/assets/html5.svg'
-import css3Logo   from '@/assets/css3.svg'
-import tailwindLogo from '@/assets/tailwind.svg'
+import TypedCommand from './TypedCommand.vue'
 
-const hoveredTech = ref(null)
+const techs = ['Vue.js', 'JavaScript', 'Astro', 'React', 'Next.js', 'HTML5', 'CSS3', 'Tailwind CSS']
 
-const techs = [
-  { name: 'Vue.js',       icon: vueLogo },
-  { name: 'Astro',        icon: astroLogo },
-  { name: 'React',        icon: reactLogo },
-  { name: 'Next.js',      icon: nextjsLogo },
-  { name: 'HTML5',        icon: html5Logo },
-  { name: 'CSS3',         icon: css3Logo },
-  { name: 'Tailwind CSS', icon: tailwindLogo }
+const workflow = [
+  { name: 'Claude', use: 'pair programming y revisión' },
+  { name: 'Antigravity', use: 'prototipado con agentes' }
 ]
 </script>
 
 <style scoped>
-.tech-section {
-  position: relative;
-  background-color: var(--color-bg-secondary);
-  background-image:
-    linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
+.stack-dir {
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
 }
 
-
-
-.container { position: relative; z-index: 1; }
-
-.section-header { text-align: center; margin-bottom: var(--spacing-3xl); }
-.section-title  { font-size: var(--font-size-4xl); margin-bottom: var(--spacing-md); }
-.section-description { font-size: var(--font-size-lg); color: var(--color-text-secondary); max-width: 600px; margin: 0 auto; }
-
-/* ── Code Window ── */
-.code-window {
-  max-width: 680px;
-  margin: 0 auto;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.07);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(57,211,83,0.05);
-  background: #0d1117;
+/* Cells draw right/bottom borders, the grid draws top/left */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-border);
 }
 
-.code-titlebar {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 11px 16px;
-  background: #161b22;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  user-select: none;
-}
-
-.code-dots { display: flex; gap: 7px; }
-.cdot { width: 12px; height: 12px; border-radius: 50%; }
-.cdot--red    { background: #ff5f57; }
-.cdot--yellow { background: #febc2e; }
-.cdot--green  { background: #28c840; }
-
-.code-filename {
-  font-family: 'Fira Code', monospace;
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.4);
-}
-
-/* Code body */
-.code-body {
-  padding: 20px 0 20px;
-  font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
-  font-size: 0.88rem;
-  line-height: 1.9;
-}
-
-.code-line {
+.stack-cell {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 24px;
-  gap: 0;
-  min-height: 1.9em;
-  transition: background 0.2s;
+  gap: 12px;
+  padding: 20px;
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-fast);
 }
 
-.code-line:hover { background: rgba(255,255,255,0.025); }
+.stack-cell:hover {
+  background: var(--color-bg-hover);
+}
 
-.ln {
-  min-width: 36px;
+.stack-name {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.stack-idx {
+  font-size: 10px;
+  color: var(--color-text-tertiary);
+}
+
+.stack-cell:hover .stack-idx {
+  color: var(--color-accent);
+}
+
+.stack-extra {
+  max-width: calc(50% - 16px);
+  margin-top: 32px;
+}
+
+.stack-note {
+  color: var(--color-text-tertiary);
+}
+
+.workflow-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.workflow-arrow {
+  color: var(--color-accent);
+}
+
+.workflow-use {
+  font-weight: 400;
+  color: var(--color-text-muted);
   text-align: right;
-  color: rgba(255,255,255,0.2);
-  font-size: 0.78em;
-  margin-right: 20px;
-  user-select: none;
-  flex-shrink: 0;
 }
 
-/* Syntax colors – VS Code dark+ palette */
-.c-comment { color: #6a9955; font-style: italic; }
-.c-kw      { color: #569cd6; }
-.c-var     { color: #9cdcfe; }
-.c-op      { color: rgba(255,255,255,0.5); }
-.c-key     { color: #9cdcfe; }
-.c-str     { color: #ce9178; }
-.c-punc    { color: rgba(255,255,255,0.4); }
-.c-brace   { color: #ffd700; }
+@media (max-width: 767px) {
+  .stack-extra {
+    max-width: none;
+  }
 
-/* Tech inline badges */
-.c-tech-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 2px 10px;
-  border-radius: 6px;
-  border: 1px solid transparent;
-  cursor: default;
-  transition: all 0.25s ease;
-}
+  .stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-.c-tech-badge:hover,
-.c-tech-badge.active {
-  background: rgba(57,211,83,0.08);
-  border-color: rgba(57,211,83,0.3);
-  transform: translateX(6px);
-}
+  .stack-cell {
+    padding: 16px;
+  }
 
-.c-tech-badge.active .c-str,
-.c-tech-badge:hover .c-str {
-  color: #39d353;
-}
-
-.tech-logo {
-  width: 18px;
-  height: 18px;
-  object-fit: contain;
-  filter: grayscale(60%);
-  transition: filter 0.25s;
-}
-
-.c-tech-badge:hover .tech-logo,
-.c-tech-badge.active .tech-logo {
-  filter: grayscale(0%);
-}
-
-/* ── Responsive ── */
-@media (max-width: 700px) {
-  .section-title  { font-size: var(--font-size-3xl); }
-  .code-window    { border-radius: 10px; }
-  .code-body      { font-size: 0.78rem; padding: 14px 0; }
-  .ln             { min-width: 28px; margin-right: 12px; }
-  .c-tech-badge   { padding: 2px 6px; gap: 6px; }
-  .tech-logo      { width: 15px; height: 15px; }
-}
-
-@media (max-width: 480px) {
-  .container      { padding: 0 1rem; }
-  .code-body      { font-size: 0.72rem; }
-  .code-window    { border-radius: 8px; }
-  .code-filename  { font-size: 0.7rem; }
-  .c-tech-badge   { transform: none !important; }
-  .section-description { font-size: 0.95rem; }
+  .stack-name {
+    font-size: 16px;
+  }
 }
 </style>

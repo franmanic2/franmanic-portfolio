@@ -4,7 +4,9 @@ const messages = {
   es: {
     nav: {
       home: 'Inicio',
+      stack: 'Stack',
       projects: 'Proyectos',
+      experience: 'Experiencia',
       education: 'Educación',
       contact: 'Contacto',
       downloadCV: 'Descargar CV'
@@ -14,7 +16,10 @@ const messages = {
       bio: 'Desarrollador Frontend apasionado por crear soluciones tecnológicas innovadoras. Especializado en desarrollo web moderno, arquitectura de software y diseño de sistemas escalables.',
       viewProjects: 'Ver Proyectos',
       viewEducation: 'Ver Educación',
-      available: 'Disponible para oportunidades',
+      available: 'Disponible para proyectos freelance',
+      now: 'ahora',
+      also: 'también',
+      freelance: 'proyectos freelance · web & IA',
       role: 'Desarrollador Frontend',
       university: 'UPC - Lima, Perú',
       openTo: 'Abierto a nuevas oportunidades',
@@ -64,8 +69,8 @@ const messages = {
       educationTitle: 'Educación',
       certTitle: 'Certificaciones',
       work: {
-        quasar: {
-          desc: 'Fundador y Desarrollador Frontend de QuasarLabs, una empresa dedicada al desarrollo de landing pages para empresas.'
+        freelance: {
+          desc: 'Landing pages y aplicaciones web para clientes propios.'
         },
         enproyec: {
           desc: 'Practicante de soporte y desarrollo de software'
@@ -95,16 +100,20 @@ const messages = {
       rights: 'Todos los derechos reservados.',
       madeWith: 'Hecho con',
       using: 'usando Vue.js',
-      headline: 'Construyamos algo',
-      headlineAccent: 'grandioso.',
+      headline: 'Construimos algo',
+      headlineAccent: 'grandioso',
       navLabel: 'Navegación',
-      builtWith: 'Construido con'
+      builtWith: 'Construido con',
+      builtWithText: 'Vue + Vite',
+      social: 'Redes'
     }
   },
   en: {
     nav: {
       home: 'Home',
+      stack: 'Stack',
       projects: 'Projects',
+      experience: 'Experience',
       education: 'Education',
       contact: 'Contact',
       downloadCV: 'Download CV'
@@ -114,7 +123,10 @@ const messages = {
       bio: 'Passionate Frontend Developer focused on creating innovative technological solutions. Specialized in modern web development, software architecture, and scalable system design.',
       viewProjects: 'View Projects',
       viewEducation: 'View Education',
-      available: 'Available for opportunities',
+      available: 'Available for freelance projects',
+      now: 'now',
+      also: 'also',
+      freelance: 'freelance projects · web & AI',
       role: 'Frontend Developer',
       university: 'UPC - Lima, Peru',
       openTo: 'Open to new opportunities',
@@ -164,8 +176,8 @@ const messages = {
       educationTitle: 'Education',
       certTitle: 'Certifications',
       work: {
-        quasar: {
-          desc: 'Founder & Frontend Developer of QuasarLabs, a company dedicated to the development of landing pages for companies.'
+        freelance: {
+          desc: 'Landing pages and web applications for my own clients.'
         },
         enproyec: {
           desc: 'Software support and development intern'
@@ -196,9 +208,11 @@ const messages = {
       madeWith: 'Made with',
       using: 'using Vue.js',
       headline: "Let's build something",
-      headlineAccent: 'great.',
+      headlineAccent: 'great',
       navLabel: 'Navigation',
-      builtWith: 'Built with'
+      builtWith: 'Built with',
+      builtWithText: 'Vue + Vite',
+      social: 'Social'
     }
   }
 }
