@@ -60,6 +60,8 @@ const education = computed(() => [
 ])
 
 const certifications = [
+  { name: 'Python for Everybody', issuer: 'University of Michigan', link: 'https://www.coursera.org/account/accomplishments/specialization/DRG549YAOZAA' },
+  { name: 'Meta Marketing Analytics Specialization', issuer: 'Meta', link: 'https://www.coursera.org/account/accomplishments/specialization/4TTG0OTCSF1X' },
   { name: 'IBM Cibersecurity Analyst', issuer: 'IBM', link: 'https://www.coursera.org/account/accomplishments/specialization/T3PKKL5M5FV9' },
   { name: 'Google IT Support', issuer: 'Google', link: 'https://www.coursera.org/account/accomplishments/specialization/8U8EGAO8XLBJ' },
   { name: 'Scrum Fundamentals Certified', issuer: 'SCRUMstudy', link: 'https://www.scrumstudy.com/certification/verify?type=SFC&number=952629' }
